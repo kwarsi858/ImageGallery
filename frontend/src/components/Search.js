@@ -5,12 +5,12 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 
-const Search = ({ word, setWord, handleSubmit }) => {
+const Search = ({ word, setWord, handleSearchSubmit }) => {
   return (
     <Container className="mt-4">
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSearchSubmit}>
             <Row>
               <Col xs={9}>
                 <Form.Control

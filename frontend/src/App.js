@@ -11,7 +11,7 @@ const App = () => {
   const [word, setWord] = useState('');
   const [images, setImages] = useState([]);
 
-  console.log(images)
+ 
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +23,7 @@ const App = () => {
       .then((res)=>res.json())
       .then((data)=>{
         setImages([{...data, title: word}, ...images])
+        console.log(images)
       })
       .catch((err)=>{
         console.log(err)
@@ -32,7 +33,7 @@ const App = () => {
   };
 
   const handleDeleteImage = (id) => {
-    setImages(images.filter((image) =>image.id !== id)); //creates a new array from filter
+    setImages(images.filter((image) =>image.id !== id))
 
   }
 
@@ -44,7 +45,7 @@ const App = () => {
         <Row xs={1} md={2} lg={3}>
           {images.map((image,i)=>(
           <Col key={i} className="pb-3">
-            <ImgCard deleteImage={handleDeleteImage} key={i} image={image}/>
+            <ImgCard key={i} image={image}/>
           </Col>
           ))}
         </Row>
